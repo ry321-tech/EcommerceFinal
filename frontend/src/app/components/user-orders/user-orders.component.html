@@ -1,0 +1,31 @@
+<div class="container-fluid p-3">
+   <div class="m-4">
+    <h1 class="display-4">Orders</h1>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sno.</th>
+                <th>Product</th>
+                <th>Date</th>
+                <th>Address</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let order of orders;index as i'>
+                <td>{{i+1}}</td>
+                <td>{{order.product.name}}</td>
+                <td>{{order.created_at | date}}</td>
+                <td>{{order.address}}</td>
+                <td>{{order.product.price}}</td>
+                <td>{{order.quantity}}</td>
+                <td>{{order.quantity * order.product.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+   </div>
+</div>

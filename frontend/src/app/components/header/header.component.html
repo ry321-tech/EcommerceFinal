@@ -1,0 +1,44 @@
+<nav *ngIf="!isAdminUrl" class="navbar navbar-expand-lg navbar-light bg-info">
+  <a class="navbar-brand" href="">E-Shop</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" *ngIf="isLoggedIn">
+        <a class="nav-link" routerLink=""
+          >Store <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item" *ngIf="isAdmin">
+        <a class="nav-link" routerLink="/admin">Admin Deshboard</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav my-2-lg-0">
+      <li class="nav-item active" *ngIf="isLoggedIn" >
+        <a class="nav-link" routerLink="/orders"
+          >Orders<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active" *ngIf="isLoggedIn">
+        <a class="nav-link" routerLink="/cart"
+          >Cart<span class="badge badge-primary">{{ numberOfItems }}</span></a
+        >
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <a class="nav-link" (click)="logout()" href="javascript:void(0);"
+          >Logout</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

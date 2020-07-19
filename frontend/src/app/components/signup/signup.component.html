@@ -1,0 +1,22 @@
+<div class="text-center mt-4">
+    <form class="form-signin border rounded" (submit)='signup($event)'>
+        <img class="mb-4" src="/assets/cart.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Create Your Account</h1>
+        <hr>
+
+       <p *ngIf='error' class="alert alert-danger">{{ error }}</p>
+       <p *ngIf='success' class="alert alert-success">{{ success }}</p>
+       
+       <input type="text" id="name" class="form-control mt-2" placeholder="Your Name" name="name" required autofocus>
+       <!--name-->
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <!--email-->
+        
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <!--Phone-->
+        <input type="number" name="phone" id="phone" class="form-control" placeholder="phone" required>
+        <button class="mt-3 btn btn-lg btn-light border rounded" type="submit">Create Account</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
+      </form>
+</div>
